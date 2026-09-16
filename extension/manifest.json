@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Video Saver — Click to Download",
+  "version": "4.0.8",
+  "description": "Download detected course and social video streams as MP4 using a local FFmpeg helper.",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "nativeMessaging",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.apnacollege.in/*",
+    "https://*.wistia.com/*",
+    "https://*.wistia.net/*",
+    "https://*.udemy.com/*",
+    "https://*.udemycdn.com/*",
+    "https://*.cloudfront.net/*",
+    "https://*.instagram.com/*",
+    "https://*.cdninstagram.com/*",
+    "https://*.facebook.com/*",
+    "https://*.fbcdn.net/*",
+    "https://*.tiktok.com/*",
+    "https://*.tiktokcdn.com/*",
+    "https://*.tiktokv.com/*",
+    "https://*.byteoversea.com/*",
+    "https://*.ibytedtos.com/*"
+  ],
+  "background": {
+    "service_worker": "worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Video Saver"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxG3om4CHKWJOWafu8+RbWAdpQ9slgEl98RYVYHqdLuO6QOqStcyr971Yhd9dr0tUuhOIR3Xjh5MnWs1M8eUGQTEuLTvWEtAOCWSQeJ4pq2sM1J8WaMETVfaXqLrlSSgGHVj2fBgu3UW8t/VKj265C5SCgpZ0NWeUmUhdfWist2wYwoobToQUZeH9RmFA/6kLVb1/itsWQU8T2hEwwwk7ycbRB5PSTknLN71XIcqkW6sLonbYTOIM12FlJtoAPqCxhE/riAIpTzWai9U68b1x8y8FaySnT0BrEB/B2XQXu6keo1naW9Ox9ANF25pgkxYyD0P2V9w4q3jjU1cjsIdSCwIDAQAB",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.apnacollege.in/*",
+        "https://*.udemy.com/course/*/learn/*",
+        "https://*.instagram.com/*",
+        "https://*.facebook.com/*",
+        "https://*.tiktok.com/*"
+      ],
+      "js": [
+        "active-title.js",
+        "lesson-title.js",
+        "social-active-video.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "world": "ISOLATED"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+native-host/LectureHost.exe
+dist/
+*.zip
+*.source
+*.partial.mp4
+node_modules/
+.DS_Store
+Thumbs.db
