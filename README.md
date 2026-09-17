@@ -4,20 +4,6 @@ Chrome extension and local FFmpeg helper for saving detected browser video strea
 
 Video Saver is a practical download workflow for course videos and selected social video pages. It detects MP4, HLS and DASH streams exposed to the browser, shows them in a simple Chrome extension popup, and saves the selected stream locally through a native FFmpeg helper.
 
-## Project Highlights
-
-- Chrome MV3 extension with local native messaging helper
-- One-click MP4 downloads through FFmpeg
-- Course video detection for Apna College / Wistia and Udemy
-- Social video detection for Facebook, Instagram and TikTok browser media streams
-- Facebook and Instagram DASH audio/video pairing
-- Active-video matching for Instagram and TikTok to reduce wrong preloaded-video downloads
-- Filename handling based on the selected video or course lesson title
-- Download progress shown as percentage
-- Private duplicate tracking without `.source` files beside downloaded videos
-- Local-only workflow with no external backend
-- Test scripts for detector and worker behavior
-
 ## Case Study
 
 ### Problem
@@ -46,6 +32,23 @@ The project is structured like a real browser extension rather than a one-off sc
 - The native C# helper isolates filesystem access and FFmpeg execution from the extension.
 - Tests simulate stream detection, social-media edge cases, title handling and helper version checks.
 
+![Video Downloader Extension](docs/screenshot/video-downloader-extension.png)
+
+## Project Highlights
+
+- Chrome MV3 extension with local native messaging helper
+- One-click MP4 downloads through FFmpeg
+- Course video detection for the online course platform I originally built this extension for (don't want to mention their name)
+- Course video detection for Udemy
+- Social video detection for Facebook, Instagram and TikTok browser media streams
+- Facebook and Instagram DASH audio/video pairing
+- Active-video matching for Instagram and TikTok to reduce wrong preloaded-video downloads
+- Filename handling based on the selected video or course lesson title
+- Download progress shown as percentage
+- Private duplicate tracking without `.source` files beside downloaded videos
+- Local-only workflow with no external backend
+- Test scripts for detector and worker behavior
+
 ## Tech Stack
 
 - Chrome Extension Manifest V3
@@ -63,8 +66,9 @@ It does not bypass DRM, paid-access systems, encryption, private authorization, 
 
 ## Features
 
-- Detect Apna College / Wistia course videos
-- Detect Udemy MP4, HLS and DASH streams exposed to the browser
+- Course video detection for the online course platform I originally built this extension for (don't want to mention their name)
+- Course video detection for Udemy
+- Detect MP4, HLS and DASH streams exposed to the browser
 - Detect Facebook video streams and pair separate audio/video DASH tracks
 - Detect Instagram browser media streams and pair matching audio by asset id
 - Detect TikTok browser media streams with active-video matching
