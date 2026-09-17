@@ -1,4 +1,4 @@
-# Video Saver
+# Video Downloader Extension
 
 Chrome extension and local FFmpeg helper for saving detected browser video streams as MP4.
 
